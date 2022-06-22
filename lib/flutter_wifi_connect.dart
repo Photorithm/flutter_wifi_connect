@@ -8,9 +8,9 @@ class FlutterWifiConnect {
 
   /// The [isEnabled] method returns true if WiFi is enabled.
   /// The method only works on android.
-  static Future<bool> get isEnabled async {
+  static Future<bool?> get isEnabled async {
     if (Platform.isAndroid) {
-      final bool enabled = await _channel.invokeMethod('isWifiEnabled');
+      final bool? enabled = await _channel.invokeMethod('isWifiEnabled');
       return enabled;
     }
     return false;
